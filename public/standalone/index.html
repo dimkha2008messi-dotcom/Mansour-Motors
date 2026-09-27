@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MANSOUR MOTORS - Prestige Automobile Dakar | Motion Design</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Polices Google Fonts pour un look premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Éléments d'ambiance -->
+    <div class="ambient-light top-light"></div>
+    <div class="ambient-light bottom-light"></div>
+    <div class="vertical-led-bar led-bar-left"></div>
+    <div class="vertical-led-bar led-bar-right"></div>
+    <div class="grid-floor"></div>
+
+    <!-- Conteneur principal fixe pour l'effet "Scrollytelling" -->
+    <main class="viewport">
+        
+        <!-- La Voiture en Vidéo Motion Design (Fixe au centre, animée par GSAP) -->
+        <div class="car-wrapper">
+            <video autoplay loop muted playsinline poster="../assets/car.png" class="car-image" id="hero-car">
+                <source src="../assets/hero-video.mp4" type="video/mp4">
+            </video>
+            <div class="car-reflection"></div>
+        </div>
+
+        <!-- SECTION 1: HERO -->
+        <section class="section hero-section" data-index="0">
+            <div class="content-box">
+                <span style="font-size: 0.75rem; letter-spacing: 0.3em; opacity: 0.8; text-transform: uppercase; display: block; margin-bottom: 0.5rem;">Mansour Motors · Route des Almadies, Dakar</span>
+                <h1 class="hero-title">L'EXCELLENCE AUTOMOBILE</h1>
+                <p class="hero-subtitle">PRESTIGE, PERFORMANCE ET INGÉNIERIE SANS COMPROMIS</p>
+            </div>
+        </section>
+
+        <!-- SECTION 2: PERFORMANCE -->
+        <section class="section performance-section" data-index="1">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-value" data-target="650">0</span>
+                    <span class="stat-unit">HP</span>
+                    <span class="stat-desc">PUISSANCE PURE</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" data-target="3.2">0</span>
+                    <span class="stat-unit">SEC</span>
+                    <span class="stat-desc">0 À 100 KM/H</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value text-only">AWD</span>
+                    <span class="stat-unit">SYSTEM</span>
+                    <span class="stat-desc">TRACTION INTEGRALE</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: DESIGN -->
+        <section class="section design-section" data-index="2">
+            <div class="content-box design-text">
+                <h2 class="design-title">DESIGNED WITHOUT<br>COMPROMISE</h2>
+            </div>
+        </section>
+
+        <!-- SECTION 4: FINAL -->
+        <section class="section final-section" data-index="3">
+            <div class="content-box">
+                <h2 class="final-title">DISCOVER THE FUTURE</h2>
+                <button class="cta-button" onclick="alert('Demande d\'allocation transmise au Concierge AURA GT.')">EXPLORE</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Scripts GSAP (Moteur d'animation) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

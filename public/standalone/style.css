@@ -1,0 +1,250 @@
+/* --- RESET & BASE --- */
+:root {
+    --bg-color: #050505;
+    --text-color: #ffffff;
+    --accent-color: #ffffff;
+    --font-main: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- AMBIANCE & BACKGROUND --- */
+.ambient-light {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80vw;
+    height: 40vh;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.15;
+    z-index: -2;
+    pointer-events: none;
+}
+
+.top-light {
+    top: -20vh;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
+}
+
+.bottom-light {
+    bottom: -20vh;
+    background: radial-gradient(circle, rgba(100,100,100,0.5) 0%, transparent 70%);
+}
+
+.vertical-led-bar {
+    position: fixed;
+    top: 15%;
+    height: 70vh;
+    width: 2px;
+    background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.7) 40%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.7) 60%, transparent 100%);
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.6));
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.35;
+}
+.led-bar-left { left: 5%; }
+.led-bar-right { right: 5%; }
+
+.grid-floor {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40vh;
+    background: linear-gradient(to top, rgba(255,255,255,0.03) 0%, transparent 100%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* --- VIEWPORT & CAR WRAPPER --- */
+.viewport {
+    position: relative;
+    width: 100%;
+}
+
+.car-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    max-width: 1200px;
+    height: auto;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+.car-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 50px rgba(0,0,0,0.8));
+    will-change: transform, opacity, filter;
+}
+
+/* --- SECTIONS (ESPACE DE SCROLL) --- */
+.section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.content-box {
+    text-align: center;
+    pointer-events: auto;
+    padding: 2rem;
+}
+
+/* --- TYPOGRAPHY & ELEMENTS --- */
+.hero-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    opacity: 1;
+}
+
+.hero-subtitle {
+    font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+    font-weight: 300;
+    letter-spacing: 0.5em;
+    opacity: 0.7;
+    text-transform: uppercase;
+}
+
+/* Performance Stats */
+.stats-container {
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.stat-value {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 200;
+    line-height: 1;
+}
+
+.stat-unit {
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    margin-top: 0.5rem;
+    opacity: 0.6;
+}
+
+.stat-desc {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    margin-top: 0.5rem;
+    opacity: 0.4;
+    text-transform: uppercase;
+}
+
+/* Design Section */
+.design-title {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 300;
+    line-height: 1.4;
+    letter-spacing: 0.1em;
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+/* Final Section */
+.final-title {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.cta-button {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 1.2rem 3rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.3em;
+    font-family: var(--font-main);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.cta-button:hover {
+    background: white;
+    color: black;
+    border-color: white;
+    box-shadow: 0 0 30px rgba(255,255,255,0.2);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .stats-container {
+        gap: 2rem;
+    }
+    .car-wrapper {
+        width: 100vw;
+    }
+}
+
+/* --- ACCESSIBILITÉ (Reduced Motion) --- */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .section {
+        height: auto;
+        min-height: 100vh;
+        padding: 4rem 0;
+    }
+    .car-wrapper {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin: 2rem 0;
+    }
+    .hero-title, .hero-subtitle, .stat-item, .design-title, .final-title, .cta-button {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}

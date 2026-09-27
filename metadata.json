@@ -1,0 +1,6 @@
+{
+  "name": "MANSOUR MOTORS - Prestige Automobile Dakar | Motion Design Experience",
+  "description": "Expérience cinématique et motion design pour Mansour Motors Dakar (Route des Almadies) : vente de véhicules de prestige, location de luxe, atelier SAV et configuration vidéo SVD-XT.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
